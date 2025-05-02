@@ -62,7 +62,7 @@ const Services = () => {
 
 
     return (
-        <div className={`w-[70%] flex flex-col gap-2  ${width == '430' ? "-mt-[30rem]" : "-mt-[3rem]"}  md:-mt-40 3xl:-mt-100 3xl:w-[46%]`}>
+        <div className={`w-[70%] flex flex-col gap-2  ${width == '430' ? "-mt-[25rem]" : "-mt-[3rem]"}  md:-mt-40 3xl:-mt-100 3xl:w-[46%]`}>
 
             <div className="w-[100%] px-4 py-12 flex flex-col gap-[4rem] items-center lg:flex-row lg:gap-[4rem] 2xl:gap-0   justify-between">
                 {cards1.map((card, index) => (
