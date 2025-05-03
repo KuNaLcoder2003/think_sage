@@ -4,8 +4,8 @@
 import React, { useState } from "react";
 import { obj } from "../data";
 
-import { motion, transform } from "framer-motion";
-import { FaWhatsapp } from "react-icons/fa";
+import { motion } from "framer-motion";
+
 
 
 export function Card() {
@@ -90,6 +90,7 @@ export function Card3() {
   return (
 
     <div
+      
       onMouseEnter={() => { setHover(true) }}
       onMouseLeave={() => { setHover(false) }}
       className="w-[100%] md:w-[415px] h-[383px] rounded-3xl bg-white shadow-2xl relative overflow-hidden flex">
@@ -143,20 +144,6 @@ export function Card3() {
         class=" absolute  w-[312px] h-[312px] left-1/2 top-[200px] translate-x-[-50%] rounded-full border-l-2 border-r-2 border-blue-500"></motion.div>
 
 
-      {/* <div class="w-[50%] absolute top-[32px] left-1/2 translate-x-[-50%] p-2 bg-gradient-to-b from-indigo-500 to-indigo-900 rounded-[47.86px] shadow-[0_130px_35px_rgba(79,70,229,0.01),0_75px_36px_rgba(79,70,229,0.03),0_42px_30px_rgba(79,70,229,0.08),0_18px_22px_rgba(79,70,229,0.14),0_4px_12px_rgba(79,70,229,0.16)] opacity-100 will-change-transform">
-        <div class=" p-2 font-bold text-lg text-center bg-[radial-gradient(35%_63%_at_50%_50%,_rgb(99,102,241)_0%,_rgb(67,56,202)_100%)] rounded-[54.69px] border-[1.37px] border-solid border-[rgba(255,255,255,0.04)] opacity-100 text-white">
-          Conversion
-        </div>
-      </div> */}
-
-      {/* <div className="p-8 self-end">
-
-        <h1 style={{ backgroundImage: "radial-gradient(98.0344% 98.0344% at 1.35135% 3.04878%, rgb(49, 46, 129) 0%, rgb(3, 7, 18) 100%)" }} className="text-3xl w-full md:w-full font-bold bg-clip-text text-transparent">
-          Conversion Focused
-        </h1>
-        <p className="font-md text-gray-600">Each project gets our teams full focus, ensuring pixel-perfect quality.</p>
-
-      </div> */}
 
     </div>
   )

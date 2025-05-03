@@ -1,8 +1,11 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const Products = () => {
     return (
-        <div className='w-[80%] m-auto mb-10 flex flex-col gap-4 '>
+        <div 
+        
+        className='w-[80%] md:w-[100%] xl:w-[80%] m-auto mb-10 flex flex-col gap-4 '>
 
             <h1 style={{ backgroundImage: "radial-gradient(98.0344% 98.0344% at 1.35135% 3.04878%, rgb(49, 46, 129) 0%, rgb(3, 7, 18) 100%)" }} className="text-4xl px-2 w-full md:w-full font-bold text-center bg-clip-text text-transparent">
                 See How We Help Other's
@@ -25,7 +28,13 @@ export default Products
 
 const ProductCard = ({ obj  }) => {
     return (
-        <div className={`flex ${obj.left ? "flex-col" : "flex-col"} lg:flex-row lg:px-8 lg:justify-around ${obj.left ? "lg:flex-row lg:items-center" : "lg:flex-row-reverse lg:items-center"} w-[100%] md:w-[70%] 3xl:w-[50%] lg:w-[100%] h-[600px] lg:h-[400px] shadow-lg rounded-4xl bg-white`}>
+        <motion.div 
+        initial={{opacity : 0 , y : 40}}
+        whileInView={{opacity : 1 , y : 0}}
+        exit={{opacity : 0 , y : -40}}
+        viewport={{once : false}}
+        transition={{duration : 1 , ease : "easeInOut"}}
+        className={`flex ${obj.left ? "flex-col" : "flex-col"} lg:flex-row lg:px-8 lg:justify-around ${obj.left ? "lg:flex-row lg:items-center" : "lg:flex-row-reverse lg:items-center"} w-[100%] md:w-[70%] 3xl:w-[50%] lg:w-[100%] h-[600px] lg:h-[400px] shadow-lg rounded-4xl bg-white`}>
 
             <div className={`object-cover flex-1 flex justify-center items-center lg:block h-[60%] lg:h-[90%]`}>
                 <img src={obj.img} className='rounded-4xl h-[90%]  lg:h-[100%]' />
@@ -55,7 +64,7 @@ const ProductCard = ({ obj  }) => {
 
 
 
-        </div>
+        </motion.div>
     )
 }
 

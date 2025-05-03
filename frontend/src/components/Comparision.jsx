@@ -49,7 +49,7 @@ export default function ComparisonGrid() {
   ];
 
   return (
-    <div className="w-[80%] m-auto bg-white p-8 rounded-xl 3xl:w-[50%]">
+    <div className="w-[80%] lg:w-[90%] xl:w-[80%] m-auto bg-white p-8 rounded-xl 3xl:w-[50%]">
       <div className="overflow-x-auto">
         <div className="min-w-max">
           {/* Header Row */}

@@ -62,7 +62,7 @@ const Services = () => {
 
 
     return (
-        <div className={`w-[70%] flex flex-col gap-2  ${width == '430' ? "-mt-[25rem]" : "-mt-[3rem]"}  md:-mt-40 3xl:-mt-100 3xl:w-[46%]`}>
+        <div className={`w-[70%] lg:w-[90%] xl:w-[70%] flex flex-col gap-2 -mt-[5rem]  ${width == '430' ? "-mt-[25rem]" : ""}  md:-mt-36 lg:-mt-10 xl:-mt-36 3xl:-mt-100 3xl:w-[46%]`}>
 
             <div className="w-[100%] px-4 py-12 flex flex-col gap-[4rem] items-center lg:flex-row lg:gap-[4rem] 2xl:gap-0   justify-between">
                 {cards1.map((card, index) => (
@@ -73,7 +73,7 @@ const Services = () => {
                         text={card.text}
                         variant={card.variant}
                     />
-                ))}
+                ))}A
             </div>
             <div className="w-[100%] px-4 py-12 flex flex-col gap-4 items-center lg:flex-row lg:gap-[4rem] 3xl:gap-0  justify-center">
                 {data1.map((card, index) => (

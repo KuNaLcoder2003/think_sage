@@ -47,7 +47,7 @@ import { FaTelegram } from 'react-icons/fa'
 
 const Footer = () => {
     return (
-        <div className="w-full overflow-hidden md:mx-10 md:w-[90%] xl:w-[85%] 3xl:w-[65%] pt-4 px-4 h-auto lg:h-[600px] m-auto bg-gradient-to-b from-indigo-500 to-indigo-900 rounded-t-[47.86px] shadow-[0_130px_35px_rgba(79,70,229,0.01),0_75px_36px_rgba(79,70,229,0.03),0_42px_30px_rgba(79,70,229,0.08),0_18px_22px_rgba(79,70,229,0.14),0_4px_12px_rgba(79,70,229,0.16)]">
+        <div className="w-full overflow-hidden md:mx-10 md:w-[90%] lg:w-[85%] 3xl:w-[65%] pt-4 px-4 h-auto lg:h-[600px] m-auto bg-gradient-to-b from-indigo-500 to-indigo-900 rounded-t-[47.86px] shadow-[0_130px_35px_rgba(79,70,229,0.01),0_75px_36px_rgba(79,70,229,0.03),0_42px_30px_rgba(79,70,229,0.08),0_18px_22px_rgba(79,70,229,0.14),0_4px_12px_rgba(79,70,229,0.16)]">
             <div className="px-6 m-auto h-[100%] overfloe-hidden pt-4 bg-[radial-gradient(35%_63%_at_50%_50%,_rgb(99,102,241)_0%,_rgb(67,56,202)_100%)] rounded-t-[54.69px] border border-[rgba(255,255,255,0.04)] text-white">
                 <div className="relative flex flex-col p-4 items-center xl:items-start gap-8">
                     {/* Optional image */}
@@ -58,7 +58,7 @@ const Footer = () => {
                     />
 
                     {/* Heading */}
-                    <h1 className="text-3xl md:text-4xl xl:text-6xl w-full xl:w-[70%] text-center xl:text-left font-bold">
+                    <h1 className="text-3xl md:text-4xl lg:text-6xl w-full lg:w-[70%] text-center xl:text-left font-bold">
                         Let’s Build Something Great Together
                     </h1>
 
