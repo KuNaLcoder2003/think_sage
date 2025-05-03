@@ -1,5 +1,20 @@
-import React from 'react'
+import React , {useState , useEffect} from 'react'
 import { motion } from 'framer-motion'
+
+const useWindowWidth = () => {
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+
+        window.addEventListener('resize', handleResize);
+
+        // Clean up on unmount
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    return width;
+};
 
 const Products = () => {
     return (
@@ -27,6 +42,7 @@ const Products = () => {
 export default Products
 
 const ProductCard = ({ obj  }) => {
+    const width = useWindowWidth();
     return (
         <motion.div 
         initial={{opacity : 0 , y : 40}}
@@ -34,19 +50,19 @@ const ProductCard = ({ obj  }) => {
         exit={{opacity : 0 , y : -40}}
         viewport={{once : false}}
         transition={{duration : 1 , ease : "easeInOut"}}
-        className={`flex ${obj.left ? "flex-col" : "flex-col"} lg:flex-row lg:px-8 lg:justify-around ${obj.left ? "lg:flex-row lg:items-center" : "lg:flex-row-reverse lg:items-center"} w-[100%] md:w-[70%] 3xl:w-[50%] lg:w-[100%] h-[600px] lg:h-[400px] shadow-lg rounded-4xl bg-white`}>
+        className={`flex ${obj.left ? "flex-col" : "flex-col"} lg:flex-row p-[10px] lg:justify-around ${obj.left ? "lg:flex-row lg:items-center lg:px-8" : "lg:flex-row-reverse lg:items-center lg:px-[-10px]"} w-[100%] md:w-[70%] 3xl:w-[50%] lg:gap-4 3xl:gap-6 lg:w-[100%] h-[600px] lg:h-[400px] shadow-lg rounded-4xl bg-white`}>
 
             <div className={`object-cover flex-1 flex justify-center items-center lg:block h-[60%] lg:h-[90%]`}>
-                <img src={obj.img} className='rounded-4xl h-[90%]  lg:h-[100%]' />
+                <img src={obj.img} className='rounded-4xl h-[85%] lg:h-[100%]' />
             </div>
 
             <div className={`border-black flex-1 h-[70%] md:h-[90%] w-[100%] p-4 lg:p-2 flex flex-col justify-center md:justify-around lg:justify-between`}>
                 <div className='border-black flex-1 h-[100%] w-[100%] p-2 flex flex-col gap-4'>
-                    <h1 style={{ backgroundImage: "radial-gradient(98.0344% 98.0344% at 1.35135% 3.04878%, rgb(49, 46, 129) 0%, rgb(3, 7, 18) 100%)" }} className="text-3xl w-full md:w-full font-bold bg-clip-text text-transparent">
+                    <h1 style={{ backgroundImage: "radial-gradient(98.0344% 98.0344% at 1.35135% 3.04878%, rgb(49, 46, 129) 0%, rgb(3, 7, 18) 100%)" }} className="text-3xl w-full md:w-full font-bold bg-clip-text text-transparent text-center lg:text-start">
                         {obj.heading}
                     </h1>
-                    <p className='font-md text-[#6b7280] w-[90%]'>{obj.desc}</p>
-                    <div className='flex items-center gap-2'>
+                    <p className='font-md text-[#6b7280] w-[100%] lg:w-[90%] text-center lg:text-start'>{obj.desc}</p>
+                    <div className='flex items-center gap-2 flex-wrap justify-center lf:justify-start'>
                        {
                         obj.tags.map((tag , index) => {
                             return (
@@ -57,7 +73,7 @@ const ProductCard = ({ obj  }) => {
                     </div>
                 </div>
 
-                <div className='font-semibold text-[#6b7280]'>
+                <div className='font-semibold text-[#6b7280] text-center lg:text-start mt-4 md:mt-0'>
                     <p>{obj.type}</p>
                 </div>
             </div>

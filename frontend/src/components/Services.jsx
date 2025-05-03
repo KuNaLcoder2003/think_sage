@@ -73,7 +73,7 @@ const Services = () => {
                         text={card.text}
                         variant={card.variant}
                     />
-                ))}A
+                ))}
             </div>
             <div className="w-[100%] px-4 py-12 flex flex-col gap-4 items-center lg:flex-row lg:gap-[4rem] 3xl:gap-0  justify-center">
                 {data1.map((card, index) => (
