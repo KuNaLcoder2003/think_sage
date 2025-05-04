@@ -16,9 +16,9 @@ const useWindowWidth = () => {
     return width;
 };
 
-const Products = () => {
+const Products = ({ref}) => {
     return (
-        <div 
+        <div ref={ref}
         
         className='w-[80%] md:w-[100%] xl:w-[80%] m-auto mb-10 flex flex-col gap-4 '>
 

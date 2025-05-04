@@ -3,9 +3,9 @@
 import React from "react";
 import { InfiniteMovingCards } from "./MovingCard";
 
-export function InfiniteMovingCardsDemo() {
+export function InfiniteMovingCardsDemo({ref}) {
   return (
-    <div
+    <div ref={ref}
       className="h-[40rem] w-[100%] rounded-md flex flex-col antialiased bg-transparent dark:bg-black dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
       <InfiniteMovingCards items={testimonials} direction="right" speed="slow" />
       <InfiniteMovingCards items={moreTestimonials} direction="left" speed="slow" />

@@ -3,15 +3,16 @@ import { FiMenu, FiX } from 'react-icons/fi' // react-icons for menu icons
 import { motion } from 'framer-motion'
 import { obj } from '../data'
 
-const data = [
-    { content: 'Why us?' },
-    { content: 'Our Work' },
-    { content: 'Pricing' },
-    { content: 'Testimonials' },
-]
 
-const Navbar = () => {
+const Navbar = ({scrollToSection , testimonialsRef , productRef ,cardsRef ,pricing}) => {
     const [isOpen, setIsOpen] = useState(false)
+    const data = [
+        { content: 'Why us?' , ref : cardsRef  },
+        { content: 'Our Work' , ref :  productRef },
+        { content: 'Pricing' , ref : pricing },
+        { content: 'Testimonials' , ref : testimonialsRef },
+    ]
+    
 
 
     return (
@@ -20,7 +21,7 @@ const Navbar = () => {
 
             <div className="flex md:justify-start lg:justify-center gap-2 self-center md:self-start lg:p-4">
                 
-                <p style={{ backgroundImage: "radial-gradient(98.0344% 98.0344% at 1.35135% 3.04878%, rgb(49, 46, 129) 0%, rgb(3, 7, 18) 100%)" }} className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent">
+                <p  style={{ backgroundImage: "radial-gradient(98.0344% 98.0344% at 1.35135% 3.04878%, rgb(49, 46, 129) 0%, rgb(3, 7, 18) 100%)" }} className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent">
                     Designify
                 </p>
             </div>
@@ -31,7 +32,7 @@ const Navbar = () => {
                     data.map((data, index) => {
 
                         return (
-                            <p className='text-gray-400 text-lg font-semibold hover:text-black transition-text duration-400 cursor-pointer' key={`${data.content}_${index}`}>{data.content}</p>
+                            <p onClick={()=>scrollToSection(data.ref)} className='text-gray-400 text-lg font-semibold hover:text-black transition-text duration-400 cursor-pointer' key={`${data.content}_${index}`}>{data.content}</p>
                         )
                     })
                 }
@@ -72,7 +73,7 @@ const Navbar = () => {
                                 className="flex flex-col lg:flex-row items-center gap-4 mt-4 md:mt-0"
                             >
                                 {data.map((item, index) => (
-                                    <p
+                                    <p onClick={()=>scrollToSection(item.ref)}
                                         className="text-gray-500 text-base md:text-lg cursor-pointer hover:text-black transition-colors duration-300 cursor-pointer"
                                         key={`${item.content}_${index}`}
                                     >
