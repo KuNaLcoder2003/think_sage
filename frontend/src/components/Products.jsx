@@ -62,7 +62,7 @@ const ProductCard = ({ obj  }) => {
                         {obj.heading}
                     </h1>
                     <p className='font-md text-[#6b7280] w-[100%] lg:w-[90%] text-center lg:text-start'>{obj.desc}</p>
-                    <div className='flex items-center gap-2 flex-wrap justify-center lf:justify-start'>
+                    <div className='flex items-center gap-2 flex-wrap justify-center lg:justify-start'>
                        {
                         obj.tags.map((tag , index) => {
                             return (
